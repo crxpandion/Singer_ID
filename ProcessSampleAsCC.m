@@ -1,4 +1,4 @@
-function [feature_vector] = ProcessSample(sample)
+function [fv] = ProcessSampleAsCC(sample, sr, varargin)
 % This function needs to do a couple of things.
 % First off it needs to calculate the instantaneous frequency and
 % amplitude. Then it needs to perform the CTF estimation based off of the 
@@ -9,7 +9,8 @@ function [feature_vector] = ProcessSample(sample)
 %
 % ccepstral coefficients vs formants
 %
+addpath('rastamat');
 
-
+fv = melfcc(sample, sr, varargin);
 
 end
