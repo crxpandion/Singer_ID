@@ -6,5 +6,10 @@ function [feature_vector] = ProcessSample(sample)
 % We should be able to use the frequency estimators in
 % http://tftb.nongnu.org/
 % To determine our ifreq and iamp
+%
+% ccepstral coefficients vs formants
+%
+
+
 
 end
