@@ -1,4 +1,9 @@
 function [] = exportPlots(dir, fname)
+addpath('export_fig');
+cdir = pwd;
+
+dir = [cdir, dir];
+
 fontsize = 18;
 
 axs=get(gcf,'Children');

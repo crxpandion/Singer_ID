@@ -1,0 +1,8 @@
+This library contains functions that will create feature vectors to be used
+to train classifiers to identify singers. 
+
+ProcessSampleAsCC will take a sample and produce a feature vector using 
+cepestral coefficients.
+
+ProcessSampleAsF will take a sample and produce a feature vector using 
+formants. 
