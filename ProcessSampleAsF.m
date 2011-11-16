@@ -8,6 +8,8 @@ function [fv] = ProcessSampleAsF(sample, sr, varargin)
 % To determine our ifreq and iamp
 %
 
+instFreq = instFrequency(sample, sr);
+
 
 
 end
