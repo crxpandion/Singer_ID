@@ -1,1 +1,19 @@
-My Github Page
+---
+layout: default
+title: Singer Identification
+---
+
+<div class="row">
+  <div class="span11">
+    {% for post in site.posts %}
+    <div class='post'>
+      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+      <div class="date">{{ post.date | date_to_string }}</div>
+      <div class="post-body">
+        {{ post.content }}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="span5"></div>
+</div>

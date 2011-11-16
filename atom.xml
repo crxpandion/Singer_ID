@@ -1,0 +1,31 @@
+---
+layout: nil
+---
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+  <title>caryme.com</title>
+  <link href="http://www.caryme.com/"/>
+  <link type="application/atom+xml" rel="self" href="http://www.caryme.com/atom.xml"/>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <id>http://www.caryme.com/</id>
+  <author>
+    <name>Cary Lee</name>
+    <email>carylee@gmail.com</email>
+  </author>
+
+  {% for post in site.posts %}
+  <entry>
+    <id>http://www.caryme.com{{ post.id }}</id>
+    <link type="text/html" rel="alternate" href="http://www.caryme.com{{ post.url }}"/>
+    <title>{{ post.title }}</title>
+    <updated>{{ post.date | date_to_xmlschema }}</updated>
+    <author>
+      <name>Cary Lee</name>
+      <uri>http://www.caryme.com/</uri>
+    </author>
+    <content type="html">{{ post.content | xml_escape }}</content>
+  </entry>
+  {% endfor %}
+ 
+</feed>

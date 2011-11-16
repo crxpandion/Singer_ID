@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<div class="row">
+  <div class="span12 offset2">
+    <div class="post">
+      <div class="page-header">
+        <h2>{{ page.title }}</h2>
+      </div>
+      <div class="date">{{ page.date | date_to_string }}</div>
+      <div class="post-body">
+        {{ content }}
+      </div>
+    </div>
+    <div class="fb-comments" data-href="caryme.com" data-num-posts="5" data-width="580"></div>
+  </div>
+</div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=205834119451637";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
