@@ -1,37 +1,37 @@
 %%
-[z, sr]= wavread('a1F.wav');
-
-
+% [z, sr]= wavread('a1F.wav');
+% 
+% 
 % formants(z, sr, 'b');
 % sound(z, sr);
 % pause;
 % hold on;
-% [z, sr]= wavread('a2F.wav');
+[z, sr]= wavread('a2F.wav');
 
 sound(z, sr);
 formants(z, sr, 'b');
 pause;
 hold on;
-[z, sr]= wavread('a1M.wav');
-
+% [z, sr]= wavread('a1M.wav');
+% 
 % 
 % formants(z, sr, 'g');
 % sound(z, sr);
 % pause;
 % hold on;
-% [z, sr]= wavread('a2M.wav');
+[z, sr]= wavread('a2M.wav');
 
 sound(z, sr);
 formants(z, sr, 'g');
 pause; hold on;
-[z, sr]= wavread('a1M2.wav');
-
+% [z, sr]= wavread('a1M2.wav');
+% 
 % 
 % formants(z, sr, 'r');
 % sound(z, sr);
 % pause;
 % hold on;
-% [z, sr]= wavread('a2M2.wav');
+[z, sr]= wavread('a2M2.wav');
 
 sound(z, sr);
 formants(z, sr, 'r');
