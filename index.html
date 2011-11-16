@@ -3,17 +3,26 @@ layout: default
 title: Singer Identification
 ---
 
+<div class="page-header">
+  <h1>{{ page.title }} <small>A Northwestern EECS 349 Project</small></h1>
+</div>
 <div class="row">
-  <div class="span11">
-    {% for post in site.posts %}
-    <div class='post'>
-      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      <div class="date">{{ post.date | date_to_string }}</div>
-      <div class="post-body">
-        {{ post.content }}
-      </div>
-    </div>
-    {% endfor %}
+  <div class="span10">
+    <h2>Overview</h2>
   </div>
-  <div class="span5"></div>
+  <div class="span4">
+    <h3>The Team</h3>
+      <div class="team-member">
+        <h4>Kai Hayashi</h4>
+      </div>
+      <div class="team-member">
+        <h4>Cary Lee</h4>
+      </div>
+      <div class="team-member">
+        <h4>Daniel Myers</h4>
+      </div>
+      <div class="team-member">
+        <h4>Rebecca Nevin</h4>
+      </div>
+  </div>
 </div>
