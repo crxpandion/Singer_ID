@@ -1,4 +1,4 @@
-function fmnts = formants(x,fs, color)
+function [h, w] = formants(x,fs)
 
 %
 % function fmnts = formants(x,fs)
@@ -20,13 +20,13 @@ th = ar(x,n);		% auto-regressive model of voice
 [b,a] = th2tf(th);	% transfer function of vocal tract
 
 [h,w] = freqz(b,a);	% frequency response of vocal tract
+h = abs(h);
+%f = w.*fs/(2*pi);
 
-f = w.*fs/(2*pi);
-
-semilogy(f,abs(h), color)
-xlabel('Frequeny (Hz)')
-ylabel('log scale frequency response')
-title('Auto-Regressive Model of Vocal Tract')
+% semilogy(f,abs(h), color)
+% xlabel('Frequeny (Hz)')
+% ylabel('log scale frequency response')
+% title('Auto-Regressive Model of Vocal Tract')
 % % hold on
 % 
 % [floc,fmag] = peaks(abs(h));
@@ -41,4 +41,4 @@ title('Auto-Regressive Model of Vocal Tract')
 % 
 % %p = roots(a)
 
-hold off
+% hold off
