@@ -28,6 +28,7 @@ for i = 1:length(C)
     substr = substr{:};
     labels.name(i) = substr(2);
     labels.note(i) = substr(5);
+    labels.vowel(i) = substr(4);
     labels.range(i) = substr(3);
         
     [z, sr] = wavread([wav_list_path C{i}]);
@@ -38,12 +39,16 @@ for i = 1:length(C)
         disp('wellsit');
     end
     
-
+    
 end
-delete('formant_vec.awesome');
-delete('cepstral_vec.awesome');
-write_matrix(f, labels, 'formant_vec.awesome');
-write_matrix(cc, labels, 'cepstral_vec.awesome');
+[pc score] = princomp(f);
+
+%delete('formant_vec.awesome');
+%delete('cepstral_vec.awesome');
+%delete('pca_format_vec.awesome');
+%write_matrix(score(:, 1:100),labels,  'pca_format_vec.awesome');
+write_matrix(f, labels, 'formant_vec_male.txt');
+write_matrix(cc, labels, 'cepstral_vec_male.txt');
 end
 
 function [cc] =calc_and_avg_cc(z, sr)
@@ -58,14 +63,33 @@ function [] = write_matrix(matrix, labels, file)
 %
 fid = fopen(file, 'a+');
 [m,n] = size(matrix);
-for i = 1:m
-    fprintf(fid, '%s, %s, %s', labels.name{i}, ...
-                               labels.note{i}, ...
-                               labels.range{i});
+
+fprintf(fid, '%s, %s, %s, %s', 'name', 'vowel', 'range', 'sex');
+for i = 1:n
+    fprintf(fid, ', %s%d', 'dim', i);
+end
+fprintf(fid, '\n');
+
+
+   for i = 1:m
+    if sum(strcmp(labels.name{i}, {'bryce_bartu', 'mike_brand',...
+                                   'cary', 'alan_taylor',...
+                                   'nathan_taylor', 'eric_rome'}))
+        %continue;
+        sex = 'male';
+    else
+        continue;
+        %sex = 'female';
+    end
+    fprintf(fid, '%s, %s, %s, %s', labels.name{i}, ...
+                                   labels.vowel{i}, ...
+                                   labels.range{i}, ...
+                                   sex);
     for j = 1:n
         fprintf(fid, ', %.6f', matrix(i,j));
     end
     fprintf(fid, '\n');
-end
+   end
+
 fclose(fid);
 end

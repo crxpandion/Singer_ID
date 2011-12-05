@@ -1,4 +1,7 @@
 %%
+Sample_waverunner('../clean_samples/samples/normalized/');
+
+%%
 [z, sr]= wavread('test_samples/a1M.wav');
 formants(z, sr, 'b');
 hold on
