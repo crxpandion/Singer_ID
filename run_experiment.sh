@@ -1,6 +1,6 @@
 #! /bin/bash
 
-DATA_DIR=/Users/Feuer/Dropbox/project/Singer_ID/cleaned_data
+DATA_DIR=cleaned_data
 OUT_DIR=.
 
 SEX_CC=cepstral_vec_sex.arff
