@@ -6,21 +6,24 @@ OUT_DIR=.
 SEX_CC=cepstral_vec_sex.arff
 VOWEL_CC=cepstral_vec_vowel.arff
 SINGER_CC=cepstral_vec_all.arff
+TYPE_CC=cepstral_vec_type.arff
 
 SEX_CTF=formant_vec_sex.arff
 VOWEL_CTF=formant_vec_vowel.arff
 SINGER_CTF=formant_vec_all.arff
+TYPE_CTF=format_vec_type.arff
 
 Set[1]=$SEX_CC
 Set[2]=$VOWEL_CC
 Set[3]=$SINGER_CC
+Set[4]=$TYPE_CC
 
-Set[4]=$SEX_CTF
-Set[5]=$VOWEL_CTF
-Set[6]=$SINGER_CTF
+Set[5]=$SEX_CTF
+Set[6]=$VOWEL_CTF
+Set[7]=$SINGER_CTF
+Set[8]=$TYPE_CTF
 
-
-for i in {1..6}
+for i in {1..8}
 do
   OUT=`echo ${Set[i]} | sed 's/\(.*\)\..*/\1/'`
   # run libsvm poly kernel degree 2 (quadratic)
