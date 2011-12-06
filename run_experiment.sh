@@ -11,7 +11,7 @@ TYPE_CC=cepstral_vec_type.arff
 SEX_CTF=formant_vec_sex.arff
 VOWEL_CTF=formant_vec_vowel.arff
 SINGER_CTF=formant_vec_all.arff
-TYPE_CTF=format_vec_type.arff
+TYPE_CTF=formant_vec_type.arff
 
 Set[1]=$SEX_CC
 Set[2]=$VOWEL_CC
