@@ -87,12 +87,12 @@ labels = cellstr(('A':'K')');
 labels = {'Soprano1'; 'Mezzo3'; 'Mezzo1'; 'Soprano3'; 'Mezzo2'; 'Soprano2'; 'Mezzo4'; 'Tenor2'; 'Baritone1'; 'Baritone2'; 'Tenor1'};
 
 figure;
-heatmap(cepstralResults, labels, labels, 'Colorbar', true);
+heatmap(cepstralResults, labels, labels, '', 'Colormap', 'jet', 'Colorbar', true);
 dir = '/../figures/Confusion/'
 exportPlots(dir, 'Cepstral_all_Confusion');
 
 figure;
-heatmap(formantResults, labels, labels, 'Colorbar', true);
+heatmap(formantResults, labels, labels, '', 'Colormap', 'jet', 'Colorbar', true);
 exportPlots(dir, 'Formant_all_Confusion');
 
 % TYPE
@@ -106,7 +106,7 @@ cepstralType = [
     1   0   1   0  73];
 
 figure;
-heatmap(cepstralType, labels, labels, 'Colorbar', true);
+heatmap(cepstralType, labels, labels, '', 'Colormap', 'jet', 'Colorbar', true);
 exportPlots(dir, 'Cepstral_Type_Confusion');
 
 
@@ -118,19 +118,18 @@ formantType = [
     8   2   8   0  57];
 
 figure;
-heatmap(formantType, labels, labels, 'Colorbar', true);
+heatmap(formantType, labels, labels, '', 'Colormap', 'jet', 'Colorbar', true);
 exportPlots(dir, 'Formant_Type_Confusion');
 
 % SEX
 
-labels = {'Soprano', 'Mezzo', 'Tenor', 'Baritone', 'Bass'};
-cepstralType = [
-    170  43   5   2   0;
-   52 240   1   5   2 ;
-    4   6 136   0   4 ;
-    3   4   1  67   0 ;
-    1   0   1   0  73];
-
+labels = {'Female', 'Male'};
+cepstralSex = [507 13; 16 284];
 figure;
-heatmap(cepstralType, labels, labels, 'Colorbar', true);
-exportPlots(dir, 'Cepstral_Type_Confusion');
+heatmap(cepstralSex, labels, labels, '', 'Colormap', 'jet', 'Colorbar', true);
+exportPlots(dir, 'Cepstral_Sex_Confusion');
+
+formantSex = [489 31; 25 275];
+figure;
+heatmap(formantSex, labels, labels, '', 'Colormap', 'jet', 'Colorbar', true);
+exportPlots(dir, 'Formant_Sex_Confusion');
