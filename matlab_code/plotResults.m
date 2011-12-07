@@ -30,9 +30,32 @@
 %   1  2  0  1  0  3  2  2  0 53 11 |  j = mike_brand
 %   1  0  0  3  1  2  6  0  0  6 56 |  k = eric_rome
 
+%cepstral type
+% === Confusion Matrix ===
+% 
+%    a   b   c   d   e   <-- classified as
+%  170  43   5   2   0 |   a =  soprano
+%   52 240   1   5   2 |   b =  mezzo
+%    4   6 136   0   4 |   c =  tenor
+%    3   4   1  67   0 |   d =  baritone
+%    1   0   1   0  73 |   e =  bass
+
+
+%formant type
+% === Confusion Matrix ===
+% 
+%    a   b   c   d   e   <-- classified as
+%  157  43   9   8   3 |   a =  soprano
+%   55 228  10   4   3 |   b =  mezzo
+%    4  12 128   0   6 |   c =  tenor
+%    2   2   0  71   0 |   d =  baritone
+%    8   2   8   0  57 |   e =  bass
+   
 clear all
 clc
 close all
+
+% ALL
 
 cepstralResults = [  
    44  6  2  9  3  7  1  0  3  0  0 ;
@@ -61,11 +84,53 @@ formantResults = [
    1  0  0  3  1  2  6  0  0  6 56 ];
 
 labels = cellstr(('A':'K')');
-labels = ['Soprano1'; 'Mezzo3'; 'Mezzo1'; 'Mezzo2'; 'Soprano2'; 'Mezzo4'; 'Tenor2'; 'Baritone1'; 'Baritone2'; 'Tenor1'];
-labels = cellstr(labels);
-figure 
-heatmap(cepstralResults, labels, labels);
+labels = {'Soprano1'; 'Mezzo3'; 'Mezzo1'; 'Soprano3'; 'Mezzo2'; 'Soprano2'; 'Mezzo4'; 'Tenor2'; 'Baritone1'; 'Baritone2'; 'Tenor1'};
 
-figure
-heatmap(formantResults, labels, labels);
+figure;
+heatmap(cepstralResults, labels, labels, 'Colorbar', true);
+dir = '/../figures/Confusion/'
+exportPlots(dir, 'Cepstral_all_Confusion');
 
+figure;
+heatmap(formantResults, labels, labels, 'Colorbar', true);
+exportPlots(dir, 'Formant_all_Confusion');
+
+% TYPE
+
+labels = {'Soprano', 'Mezzo', 'Tenor', 'Baritone', 'Bass'};
+cepstralType = [
+    170  43   5   2   0;
+   52 240   1   5   2 ;
+    4   6 136   0   4 ;
+    3   4   1  67   0 ;
+    1   0   1   0  73];
+
+figure;
+heatmap(cepstralType, labels, labels, 'Colorbar', true);
+exportPlots(dir, 'Cepstral_Type_Confusion');
+
+
+formantType = [
+  157  43   9   8   3;
+   55 228  10   4   3;
+    4  12 128   0   6;
+    2   2   0  71   0;
+    8   2   8   0  57];
+
+figure;
+heatmap(formantType, labels, labels, 'Colorbar', true);
+exportPlots(dir, 'Formant_Type_Confusion');
+
+% SEX
+
+labels = {'Soprano', 'Mezzo', 'Tenor', 'Baritone', 'Bass'};
+cepstralType = [
+    170  43   5   2   0;
+   52 240   1   5   2 ;
+    4   6 136   0   4 ;
+    3   4   1  67   0 ;
+    1   0   1   0  73];
+
+figure;
+heatmap(cepstralType, labels, labels, 'Colorbar', true);
+exportPlots(dir, 'Cepstral_Type_Confusion');

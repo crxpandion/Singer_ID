@@ -2,30 +2,18 @@
 Sample_waverunner('../clean_samples/samples/normalized/');
 
 %%
-[z, sr]= wavread('test_samples/a1M.wav');
+[z, sr]= wavread('../samples/mezzo1/mid/a/a1.wav');
 formants(z, sr, 'b');
-hold on
 
-[z, sr]= wavread('test_samples/a1M2.wav');
-formants(z, sr, 'b');
 hold on;
-% [z, sr]= wavread('test_samples/a1M.wav');
-% 
-% 
-% formants(z, sr, 'g');
-% hold on;
-% 
-% [z, sr]= wavread('test_samples/a2M.wav');
-% formants(z, sr, 'g');
-% hold on;
-% [z, sr]= wavread('test_samples/a1M2.wav');
-% 
-% 
-% formants(z, sr, 'r');
-% hold on;
-% [z, sr]= wavread('test_samples/a2M2.wav');
-% formants(z, sr, 'r');
-% hold on;
+[z, sr]= wavread('../samples/soprano1/mid/a/a2.wav');
+formants(z, sr, 'r');
+xlabel('Frequency (Hz)')
+ylabel('Log Scale Frequency Response')
+title('CTF')
+exportPlots('/../figures/CTF/', 'comparisionMezzo1Soprano1CTF');
+exportPlots('/../figures/CTF/', 'comparisionMezzo1Soprano1CTF');
+
 
 %%
 [z, sr] = wavread('a1.wav');

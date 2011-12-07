@@ -28,7 +28,6 @@ x = calc_and_avg_cc(z, sr);
 cc = zeros(size(C, 1), length(x));
 
 for i = 1:length(C)
-
     substr =  regexp(C(i), '/', 'split');
     substr = substr{:};
     labels.name(i) = substr(2);
@@ -42,12 +41,10 @@ for i = 1:length(C)
     cc(i, :) = calc_and_avg_cc(z, sr);
     
     if (i > 1 && (abs(sum(w(i, :) - w(i-1, :))) > 0))
-        disp('wellsit');
-    end
-    
-    
+        disp('wellshit');
+    end    
 end
-[pc score] = princomp(f);
+%[pc score] = princomp(f);
 
 fprintf(1, 'writing data to file...\n');
 write_matrix(f, labels, 'formant_vec_female.txt');
@@ -73,9 +70,7 @@ for i = 1:n
     fprintf(fid, ', %s%d', 'dim', i);
 end
 fprintf(fid, '\n');
-
-
-   for i = 1:m
+for i = 1:m
     if sum(strcmp(labels.name{i}, {'bryce_bartu', 'mike_brand',...
                                    'cary', 'alan_taylor',...
                                    'nathan_taylor', 'eric_rome'}))
@@ -94,7 +89,7 @@ fprintf(fid, '\n');
         fprintf(fid, ', %.6f', matrix(i,j));
     end
     fprintf(fid, '\n');
-   end
+end
 
 fclose(fid);
 end

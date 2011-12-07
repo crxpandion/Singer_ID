@@ -12,7 +12,7 @@ ylabel('% Correctly Classified');
 exportPlots('/../figures/boxplots/', 'SingerClassBox');
 
 boxplot(reshape([cc_sex, ctf_sex], 30, 2), 'labels', {'Mel Freq CC', 'CTF'});
-title('Gender Classification');
+title('Sex Classification');
 ylabel('% Correctly Classified');
 exportPlots('/../figures/boxplots/', 'SexClassBox');
 
