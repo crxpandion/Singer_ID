@@ -1,3 +1,0 @@
-all h=1 p-value=2.84322e-22 confidence_i=[6.101029, 7.085984]
-sex h=1 p-value=2.23376e-17 confidence_i=[1.821556, 2.284164]
-type h=1 p-value=1.54585e-24 confidence_i=[6.638096, 7.516377]
