@@ -89,11 +89,11 @@ labels = {'Soprano1'; 'Mezzo3'; 'Mezzo1'; 'Soprano3'; 'Mezzo2'; 'Soprano2'; 'Mez
 figure;
 heatmap(cepstralResults, labels, labels, '', 'Colormap', 'jet', 'Colorbar', true);
 dir = '/../figures/Confusion/'
-exportPlots(dir, 'Cepstral_all_Confusion');
+%exportPlots(dir, 'Cepstral_all_Confusion');
 
 figure;
 heatmap(formantResults, labels, labels, '', 'Colormap', 'jet', 'Colorbar', true);
-exportPlots(dir, 'Formant_all_Confusion');
+%exportPlots(dir, 'Formant_all_Confusion');
 
 % TYPE
 
