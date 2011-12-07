@@ -1,4 +1,4 @@
 # ignore tmpfiles
 *~
-.DS_STORE
-
+.DS_*
+_*

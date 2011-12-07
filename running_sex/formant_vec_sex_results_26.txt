@@ -1,0 +1,133 @@
+Zero Weights processed. Default weights will be used
+.....................................*
+optimization finished, #iter = 31144
+nu = 5.8447327311659096E-6
+obj = -0.002396386301270008, rho = -0.48360548070026516
+nSV = 162, nBSV = 0
+Total nSV = 162
+...........................*.*
+optimization finished, #iter = 20990
+nu = 5.949870604586508E-6
+obj = -0.0021955668111267126, rho = -0.3919035044352578
+nSV = 154, nBSV = 0
+Total nSV = 154
+.....................................*
+optimization finished, #iter = 27841
+nu = 6.091295023342687E-6
+obj = -0.002247739963878299, rho = -0.3612307100342349
+nSV = 159, nBSV = 0
+Total nSV = 159
+...........................*
+optimization finished, #iter = 20328
+nu = 4.75872962272101E-6
+obj = -0.0017560517006295362, rho = 0.6365427187227802
+nSV = 158, nBSV = 0
+Total nSV = 158
+..........................*
+optimization finished, #iter = 19353
+nu = 5.430623017005816E-6
+obj = -0.0020038800342508318, rho = 0.38315719219129285
+nSV = 147, nBSV = 0
+Total nSV = 147
+........................*
+optimization finished, #iter = 17771
+nu = 5.8352525922824785E-6
+obj = -0.0021532779900349957, rho = -0.5760386491456055
+nSV = 149, nBSV = 0
+Total nSV = 149
+......................*
+optimization finished, #iter = 16292
+nu = 6.060417847425855E-6
+obj = -0.002236334944288699, rho = 0.5533377738115102
+nSV = 150, nBSV = 0
+Total nSV = 150
+...................................*...*
+optimization finished, #iter = 28250
+nu = 6.351751867981436E-6
+obj = -0.002343744562889143, rho = 0.4665022694339899
+nSV = 158, nBSV = 0
+Total nSV = 158
+...................................*
+optimization finished, #iter = 26212
+nu = 5.677947734838481E-6
+obj = -0.002095287563250919, rho = -0.245773285888625
+nSV = 154, nBSV = 0
+Total nSV = 154
+...................................*
+optimization finished, #iter = 26430
+nu = 6.0371303802569016E-6
+obj = -0.002227768632961916, rho = -0.4844921321674442
+nSV = 159, nBSV = 0
+Total nSV = 159
+..........................*
+optimization finished, #iter = 19245
+nu = 6.294873340267796E-6
+obj = -0.00232289709918934, rho = 0.4425047767479802
+nSV = 154, nBSV = 0
+Total nSV = 154
+
+Options: -S 0 -K 1 -D 2 -G 0.0 -R 0.0 -N 0.5 -M 40.0 -C 1.0 -E 0.0010 -P 0.1 -model /Users 
+
+LibSVM wrapper, original code by Yasser EL-Manzalawy (= WLSVM)
+
+Time taken to build model: 1.41 seconds
+Time taken to test model on training data: 0.9 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         820              100      %
+Incorrectly Classified Instances         0                0      %
+Kappa statistic                          1     
+Mean absolute error                      0     
+Root mean squared error                  0     
+Relative absolute error                  0      %
+Root relative squared error              0      %
+Coverage of cases (0.95 level)         100      %
+Mean rel. region size (0.95 level)      50      %
+Total Number of Instances              820     
+
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 1         0          1         1         1          1         female
+                 1         0          1         1         1          1         male
+Weighted Avg.    1         0          1         1         1          1    
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 520   0 |   a =  female
+   0 300 |   b =  male
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         762               92.9268 %
+Incorrectly Classified Instances        58                7.0732 %
+Kappa statistic                          0.8482
+Mean absolute error                      0.0707
+Root mean squared error                  0.266 
+Relative absolute error                 15.2404 %
+Root relative squared error             55.2152 %
+Coverage of cases (0.95 level)          92.9268 %
+Mean rel. region size (0.95 level)      50      %
+Total Number of Instances              820     
+
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.938     0.087      0.949     0.938     0.944      0.926     female
+                 0.913     0.062      0.895     0.913     0.904      0.926     male
+Weighted Avg.    0.929     0.077      0.93      0.929     0.929      0.926
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 488  32 |   a =  female
+  26 274 |   b =  male
+
