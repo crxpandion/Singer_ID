@@ -1,0 +1,4 @@
+# ignore tmpfiles
+*~
+.DS_*
+_*
