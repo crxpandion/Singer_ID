@@ -1,0 +1,163 @@
+\---
+layout: default
+title: Singer Identification
+\---
+.page-header
+  %h1 Teaching Computers to Identify Singers
+  %h1
+    %small A Study in Signal Processing and Machine Learning
+%section#team
+%h2 The Team
+.row
+  .span4
+    .team-member
+      %address
+        %img{:src=>"img/KaiSmall.jpg"}
+        %a.name{:href=>"http://www.linkedin.com/pub/kai-hayashi/23/734/160"} Kai Hayashi
+        %a{:mailto => ""} k.hermitian@gmail.com
+  .span4
+    .team-member
+      %img{:src=>"img/cary_square.jpg"}
+      %address
+        %a.name{:href=>"http://www.caryme.com"} Cary Lee
+        %br/
+        %a{:mailto => ""} carylee@gmail.com
+  .span4
+    .team-member
+      %img{:src=>"img/DanHornSmall.jpg"}
+      %address
+        %a.name{:href=>"http://linuxhaxor.blogspot.com/"} Daniel Myers
+        %br/
+        %a{:mailto => ""} dmritard96@gmail.com
+  .span4
+    .team-member
+      %img{:src=>"img/BeckyPretty.jpg"}
+      %address
+        %a.name{:href=>"http://www.linkedin.com/pub/rebecca-nevin/28/932/2b8"} Rebecca Nevin
+        %br/
+        %a{:mailto => ""} rlnevin@gmail.com
+.row
+  .span16
+    %section#background
+      %h2 Background
+      %ul
+        %li Each voice is unique, therefore there are many applications for automated singer identification:
+        %li Source differentiation in audio recordings
+        %li Identification of a singers presence on an unlabeled track.
+        %li Humans are able to naturally distinguish between different singers by listening for timbre. One component of timbre is the spectral envelope which has peaks called formants.
+        %li Wakefield and Bartsch have used composite transfer functions (CTFs) to extract formants and teach singer identification to machines.
+        %li Logan has used Mel frequency cepstral coefficients (MFCCs) as a tool for music modeling.
+    %section#dataset
+      %h2 Data Set
+      %ul
+        %li A total of 11 classically trained vocalists from Northwestern University consisting of 3 sopranos, 4 mezzo-sopranos, 2 tenors and 2 baritones.
+        %li 825 total (75 per vocalist) single-pitch, 1-second samples with the following breakdown:
+        %li The first 5 notes of a major scale.
+        %li Repeated in the low, middle and high regions of the singer’s range.
+        %li Repeated for each of the 5 common Italian language vowels.
+        %li 44.1.sampling rate and 16 bits/samples
+    %section#signalprocessing
+      %h2 Signal Processing
+      %p Before machine learning can occur, the necessary features must be extracted from the raw audio files.
+      %ol
+        %li The Matlab Signal Processing toolbox was used to calculate a spectrogram for each signal.
+        %li The formant was calculated using either an approximation of the CTF or code from Ellis for generating MFCCs.
+        %li Principle component analysis was performed on the outputs to generate data readable by LibSVM.
+
+    %section#learningmethod
+      %h2 Learning Method
+      %ul
+        %li The WEKA software package was used to perform learning tasks.
+        %li LibSVM was used with quadratic classifiers.
+        %li Ten-fold cross-validation.
+        %li
+          Samples were classified on three different levels:
+          %ol
+            %li Individual singers
+            %li Voice Type
+            %li Sex
+        %li Performance was measured as the percentage of correctly classified samples.
+
+    %section#results
+      %h2 Results
+      %h3 Composite Transfer Functions vs. Mel Frequency Cepstral Coefficients
+      %ul.media-grid.confusion
+        %li
+          %a{:href=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/Confusion/Formant_all_Confusion.png", 'data-placement'=>"below", :rel=>"twipsy", :title=>"Confusion matrix for individual singers using CTF"}
+            %img{:src=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/Confusion/Formant_all_Confusion.png"}
+        %li
+          %a{:href=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/Confusion/Cepstral_all_Confusion.png", 'data-placement'=>"below", :rel=>"twipsy", :title=>"Confusion matrix for individual singers using MFCC"}
+            %img{:src=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/Confusion/Cepstral_all_Confusion.png"}
+      %p
+        The plots above show confusion matrices for the CTF approximation
+        method (left) and the MFCC method (right). It is clear that MFCCs
+        were more successful at classifying our samples.
+      %h3 Classification Levels
+      .row.boxplots
+        .span5
+          %p
+            The box plots shown right summarize our learner’s ability to
+            classify data samples at one of three levels: 
+            %a{:href=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/boxplots/SingerClassBox.png"} individuals
+            (top left),
+            %a{:href=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/boxplots/SingerTypeClassBox.png"} voice type
+            (top right), and
+            %a{:href=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/boxplots/SexClassBox.png"} sex
+            (bottom left). As the classification
+            becomes more general, the machine is more successful. There are
+            several interesting conclusions to be drawn:
+          %ul
+            %li Very good at identifying sex
+            %li Voice type and individual identification are more challenging
+          %p
+            Further investigation revealed that the
+            %strong majority of voice type and individual errors occurred amongst the female samples,
+            as can be seen in the 
+            %a{:href=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/Confusion/Cepstral_all_Confusion.png"} individual confusion matrix 
+            and the
+            %a{:href=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/Confusion/Cepstral_Type_Confusion.png"} voice type confusion matrix
+            (bottom right). The reasons for this are of
+            great interest to us.
+        .span11
+          %ul.media-grid
+            %li
+              %a{:href=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/boxplots/SingerClassBox.png", 'data-placement'=>"left", :rel=>"twipsy", :title=>"Classifying Individual Singers"}
+                %img{:src=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/boxplots/SingerClassBox.png"}
+            %li
+              %a{:href=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/boxplots/SingerTypeClassBox.png", 'data-placement'=>"left", :rel=>"twipsy", :title=>"Classifying Voice Type"}
+                %img{:src=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/boxplots/SingerTypeClassBox.png"}
+            %li
+              %a{:href=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/boxplots/SexClassBox.png", 'data-placement'=>"left", :rel=>"twipsy", :title=>"Classifying Sex"}
+                %img{:src=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/boxplots/SexClassBox.png"}
+            %li
+              %a{:href=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/Confusion/Cepstral_Type_Confusion.png", 'data-placement'=>"left", :rel=>"twipsy", :title=>"Classifying Voice Type"}
+                %img{:src=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/Confusion/Cepstral_Type_Confusion.png"}
+
+
+    %section#discussion
+      %h2 Discussion
+      %h3 Sparse spectra:
+      %p
+        As Wakefield and Bartsch explain, the female voice typically has a higher
+        fundamental frequency, such that the spectral envelopes generated by the female
+        singers are sparser than those of the male singers. These sparse spectra
+        likely contribute to our difficulty in classifying female voices. The plot
+        below shows the CTF for a soprano and a mezzo-soprano and demonstrates how
+        the similarities could cause confusion.
+      %ul.media-grid
+        %li
+          %a{:href=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/CTF/comparisionMezzo1Soprano1CTF.png", 'data-placement'=>"right", :rel=>"twipsy", :title=>"Classifying Individual Singers"}
+            %img{:src=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/CTF/comparisionMezzo1Soprano1CTF.png"}
+      %h3 Voice maturity
+      %p
+        The age and maturity of our sample set must also be considered in evaluating
+        the results. A young woman’s voice can continue to change and develop into her
+        30’s. As such, it is not uncommon for young female singers to change voice
+        types early in their career. Our vocalists are all under the age of 30 and our
+        youngest singer, Mezzo3, is currently considering transitioning to soprano
+        repertoire. Thus our results are more vulnerable to voice type discrepancies
+        than a sample set of fully developed vocalists.
+      %h3 Future research opportunities:
+      %ol
+        %li Could machines trained on matured singers help voice teachers identify the voice type of young students, particularly pre-mature females?
+        %li How will a learner perform when the sample set contains more specific fachs such as coloratura soprano, lyric soprano, spinto soprano, and soubrette?

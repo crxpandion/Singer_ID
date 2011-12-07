@@ -13,44 +13,51 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
   <title>Singer Identification</title>
-  <meta name="description" content="The personal website of Cary Lee">
+  <meta name="description" content="">
   <meta name="author" content="Cary Lee">
-  <base href="http://crxpandion.github.com/Singer_ID/" />
+  <!--<base href="http://crxpandion.github.com/Singer_ID/" />-->
 
   <!-- Mobile viewport optimized: j.mp/bplateviewport -->
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+	  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
 
-  <!-- CSS: implied media=all -->
-  <!-- CSS concatenated and minified via ant build script-->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
+  <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
-  <!-- end CSS-->
 
   <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
 
-  <!-- All JavaScript at the bottom, except for Modernizr / Respond.
-       Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries
-       For optimal performance, use a custom Modernizr build: www.modernizr.com/download/ -->
-  <script src="js/libs/modernizr-2.0.6.min.js"></script>
+  <!--<script src="js/libs/modernizr-2.0.6.min.js"></script>-->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="js/bootstrap-twipsy.js"></script>
+  <script src="js/bootstrap-scrollspy.js"></script>
+  <script src="js/bootstrap-popover.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+
 </head>
 
 <body>
-  <header class="topbar">
-    <div class="fill">
+  <div class="topbar" data-scrollspy="scrollspy">
+    <div class="topbar-inner">
       <div class="container">
         <a class="brand" href="index.html">Singer Identification</a>
         <ul class="nav">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="samples.html">Samples</a></li>
+          <li class="active"><a href="#team">The Team</a></li>
+          <li><a href="#background">Background</a></li>
+          <li><a href="#dataset">Data Set</a></li>
+          <li><a href="#signalprocessing">Signal Processing</a></li>
+          <li><a href="#learningmethod">Learning Method</a></li>
+          <li><a href="#results">Results</a></li>
+          <li><a href="#discussion">Discussion</a></li>
           <li><a href="references.html">References</a></li>
         </ul>
       </div>
     </div>
-  </header>
+  </div>
   <div class="body container">
-    <div id="main" class="content" role="main">
+    <div id="main" class="content" data-role="page" role="main">
       {{ content }}
 
     </div>
@@ -63,13 +70,11 @@
   <!-- JavaScript at the bottom for fast page loading -->
 
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+  <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>-->
 
 
   <!-- scripts concatenated and minified via ant build script-->
-  <script defer src="js/plugins.js"></script>
-  <script defer src="js/script.js"></script>
   <div id="fb-root"></div>
   <!-- end scripts-->
 
