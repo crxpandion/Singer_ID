@@ -101,7 +101,9 @@ title: Singer Identification
       <p>Before machine learning can occur, the necessary features must be extracted from the raw audio files.</p>
       <ol>
         <li>The Matlab Signal Processing toolbox was used to calculate a spectrogram for each signal.</li>
-        <li>The formant was calculated using either an approximation of the CTF or code from Ellis for generating MFCCs.</li>
+        <li>The formant was calculated using either an approximation of the CTF or code from</li>
+        <a href='http://labrosa.ee.columbia.edu/matlab/rastamat/'>Ellis</a>
+        for generating MFCCs.
         <li>Principle component analysis was performed on the outputs to generate data readable by</li>
         <a href='http://www.csie.ntu.edu.tw/~cjlin/libsvm/'>LibSVM.</a>
       </ol>
