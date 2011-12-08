@@ -2,7 +2,7 @@
 layout: default
 title: Singer Identification
 ---
-<div class='page-header'>
+<div class='page-header title'>
   <div class='row'>
     <div class='span12'>
       <h1>Teaching Computers to Identify Singers</h1>
@@ -16,7 +16,7 @@ title: Singer Identification
         <br />
         EECS 349
         <br />
-        Bryan Pardo
+        Prof. Bryan Pardo
       </p>
     </div>
   </div>
@@ -69,31 +69,115 @@ title: Singer Identification
   <div class='span16'>
     <section id='background'>
       <h2>Background</h2>
+      <p>
+        Identifying and differentiating the voices of individual singers is a
+        task that comes naturally to humans. Consider the following recordings
+        of two singers:
+      </p>
+      <div class='row'>
+        <div class='span-one-third'>
+          <h3>Singer 1</h3>
+          <audio controls='controls'>
+            <source src='audio/mezzo2-excerpt.wav' type='audio/wav'></source>
+            Your browser does not support the audio tag.
+          </audio>
+        </div>
+        <div class='span-one-third'>
+          <h3>Singer 2</h3>
+          <audio controls='controls'>
+            <source src='audio/tenor1-excerpt.wav' type='audio/wav'></source>
+            Your browser does not support the audio tag.
+          </audio>
+        </div>
+      </div>
+      <br />
+      <p>
+        Clearly, Singer 1 and Singer 2 are not the same person. Even after
+        hearing only a short excerpt of each singer, we can distinguish between
+        the two. We can deduce information about the singers, like their sexes or
+        perhaps even their voice types. The task is somewhat more challenging with
+        shorter samples given out of context, like the three below.
+      </p>
+      <div class='row'>
+        <div class='span-one-third'>
+          <h3>Mystery Singer 1</h3>
+          <audio controls='controls'>
+            <source src='https://github.com/crxpandion/Singer_ID/raw/master/samples/Mezzo1/mid/a/a2.wav' type='audio/wav'></source>
+            Your browser does not support the audio tag.
+          </audio>
+          <a data-placement='below' href='#background' rel='twipsy' title='Wildcard - not one of the singers above'>Who is it?</a>
+        </div>
+        <div class='span-one-third'>
+          <h3>Mystery Singer 2</h3>
+          <audio controls='controls'>
+            <source src='https://github.com/crxpandion/Singer_ID/raw/master/samples/tenor1/high/a/a3.wav' type='audio/wav'></source>
+            Your browser does not support the audio tag.
+          </audio>
+          <a data-placement='below' href='#background' rel='twipsy' title='Singer 2'>Who is it?</a>
+        </div>
+        <div class='span-one-third'>
+          <h3>Mystery Singer 3</h3>
+          <audio controls='controls'>
+            <source src='https://github.com/crxpandion/Singer_ID/raw/master/samples/mezzo2/mid/a/a2.wav' type='audio/wav'></source>
+            Your browser does not support the audio tag.
+          </audio>
+          <a data-placement='below' href='#background' rel='twipsy' title='Singer 1'>Who is it?</a>
+        </div>
+      </div>
+      <br />
+      <p>
+        Even out of context, humans can usually differentiate between different
+        singers' voices by the timbre, or quality, of the voice.  One of the
+        most important components of what a human listener perceives as timbre
+        is the spectral envelope of the singer's voice. The peaks of that to
+        identify a singer is particularly useful because, as
+        <a href='http://www.lma.cnrs-mrs.fr/~kronland/Sense_of_Sound/49690159.pdf'>Khine, Nwe, and Li</a>
+        explain, "studies suggest that timbre is invariant with an individual
+        singer."
+      </p>
+      <p>
+        This project explores the application of machine learning to develop an automated singer identifier, largely following
+        the methodology of
+        <a href='http://home.earthlink.net/~bartscma/caruso.pdf'>Wakefield and Bartsch.</a>
+        There many applications for this kind of automated singer identification, including:
+      </p>
       <ul>
-        <li>Each voice is unique, therefore there are many applications for automated singer identification:</li>
         <li>Source differentiation in audio recordings</li>
         <li>Identification of a singers presence on an unlabeled track.</li>
-        <li>Humans are able to naturally distinguish between different singers by listening for timbre. One component of timbre is the spectral envelope which has peaks called formants.</li>
-        <li>
-          <a href='http://home.earthlink.net/~bartscma/caruso.pdf'>Wakefield and Bartsch</a>
-          have used composite transfer functions (CTFs) to extract formants and teach singer identification to machines.
-        </li>
-        <li>
-          <a href='http://ismir2000.ismir.net/papers/logan_abs.pdf'>Logan</a>
-          has used Mel frequency cepstral coefficients (MFCCs) as a tool for music modeling.
-        </li>
       </ul>
+      <p>
+        One of the problems in trying to develop such a classifier is the question of how to quantify
+        the timbral features of an audio recording for training and classification. In this project, we compare
+        the performacne of compositie transfer functions (CTFs) as proposed by
+        <a href='http://home.earthlink.net/~bartscma/caruso.pdf'>Wakefield and Bartsch</a>
+        and Mel frequency cepstral coefficients, as used by
+        <a href='http://ismir2000.ismir.net/papers/logan_abs.pdf'>Logan.</a>
+      </p>
     </section>
     <section id='dataset'>
       <h2>Data Set</h2>
+      <p>
+        We recruited volunteer singers to be recorded and included as part of our
+        data set.  We recorded a total of 11 classically trained singers from
+        Northwestern University Bienen School of Music consisting of 3 sopranos,
+        4 mezzo-sopranos, 2 tenors and 2 baritones.
+      </p>
+      <p>
+        Each singer was asked to sing:
+      </p>
       <ul>
-        <li>A total of 11 classically trained vocalists from Northwestern University consisting of 3 sopranos, 4 mezzo-sopranos, 2 tenors and 2 baritones.</li>
-        <li>825 total (75 per vocalist) single-pitch, 1-second samples with the following breakdown:</li>
         <li>The first 5 notes of a major scale.</li>
         <li>Repeated in the low, middle and high regions of the singer’s range.</li>
-        <li>Repeated for each of the 5 common Italian language vowels.</li>
-        <li>44.1KHz sampling rate and 16 bits/sample</li>
+        <li>Repeated for each of the 5 common Italian language vowels [a], [e], [i], [o], and [u]</li>
       </ul>
+      <p>A single scale sounded like this (recorded at 44.1KHz, 16 bits/sample):</p>
+      <audio controls='controls'>
+        <source src='audio/tenor2-a.wav' type='audio/wav'></source>
+        Your browser does not support the audio tag.
+      </audio>
+      <p>
+        These scales were then manually split into single-ptched, 1-second samples, totalling 825 samples (75 per singer).
+      </p>
       <a class='btn primary' href='https://github.com/downloads/crxpandion/Singer_ID/samples.zip'>Download our data set (66MB)</a>
     </section>
     <section id='signalprocessing'>
@@ -101,9 +185,11 @@ title: Singer Identification
       <p>Before machine learning can occur, the necessary features must be extracted from the raw audio files.</p>
       <ol>
         <li>The Matlab Signal Processing toolbox was used to calculate a spectrogram for each signal.</li>
-        <li>The formant was calculated using either an approximation of the CTF or code from</li>
-        <a href='http://labrosa.ee.columbia.edu/matlab/rastamat/'>Ellis</a>
-        for generating MFCCs.
+        <li>
+          The formant was calculated using either an approximation of the CTF or code from
+          <a href='http://labrosa.ee.columbia.edu/matlab/rastamat/'>Ellis</a>
+          for generating MFCCs.
+        </li>
         <li>Principle component analysis was performed on the outputs to generate data readable by</li>
         <a href='http://www.csie.ntu.edu.tw/~cjlin/libsvm/'>LibSVM.</a>
       </ol>
