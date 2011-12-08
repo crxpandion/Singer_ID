@@ -3,54 +3,68 @@ layout: default
 title: Singer Identification
 ---
 <div class='page-header'>
-  <h1>Teaching Computers to Identify Singers</h1>
-  <h1>
-    <small>A Study in Signal Processing and Machine Learning</small>
-  </h1>
-</div>
-<section id='team'></section>
-<h2>The Team</h2>
-<div class='row'>
-  <div class='span4'>
-    <div class='team-member'>
-      <address>
-        <img src='img/KaiSmall.jpg' />
-        <a class='name' href='http://www.linkedin.com/pub/kai-hayashi/23/734/160'>Kai Hayashi</a>
-        <a mailto=''>k.hermitian@gmail.com</a>
-      </address>
+  <div class='row'>
+    <div class='span12'>
+      <h1>Teaching Computers to Identify Singers</h1>
+      <h1>
+        <small>A Study in Signal Processing and Machine Learning</small>
+      </h1>
     </div>
-  </div>
-  <div class='span4'>
-    <div class='team-member'>
-      <img src='img/cary_square.jpg' />
-      <address>
-        <a class='name' href='http://www.caryme.com'>Cary Lee</a>
+    <div class='span4'>
+      <p>
+        Northwestern University
         <br />
-        <a mailto=''>carylee@gmail.com</a>
-      </address>
-    </div>
-  </div>
-  <div class='span4'>
-    <div class='team-member'>
-      <img src='img/DanHornSmall.jpg' />
-      <address>
-        <a class='name' href='http://linuxhaxor.blogspot.com/'>Daniel Myers</a>
+        EECS 349
         <br />
-        <a mailto=''>dmritard96@gmail.com</a>
-      </address>
-    </div>
-  </div>
-  <div class='span4'>
-    <div class='team-member'>
-      <img src='img/BeckyPretty.jpg' />
-      <address>
-        <a class='name' href='http://www.linkedin.com/pub/rebecca-nevin/28/932/2b8'>Rebecca Nevin</a>
-        <br />
-        <a mailto=''>rlnevin@gmail.com</a>
-      </address>
+        Bryan Pardo
+      </p>
     </div>
   </div>
 </div>
+<section id='team'>
+  <h2>The Team</h2>
+  <div class='row'>
+    <div class='span4'>
+      <div class='team-member'>
+        <address>
+          <img src='img/KaiSmall.jpg' />
+          <a class='name' href='http://www.linkedin.com/pub/kai-hayashi/23/734/160'>Kai Hayashi</a>
+          <a mailto=''>k.hermitian@gmail.com</a>
+        </address>
+      </div>
+    </div>
+    <div class='span4'>
+      <div class='team-member'>
+        <img src='img/cary_square.jpg' />
+        <address>
+          <a class='name' href='http://www.caryme.com'>Cary Lee</a>
+          <br />
+          <a mailto=''>carylee@gmail.com</a>
+        </address>
+      </div>
+    </div>
+    <div class='span4'>
+      <div class='team-member'>
+        <img src='img/DanHornSmall.jpg' />
+        <address>
+          <a class='name' href='http://linuxhaxor.blogspot.com/'>Daniel Myers</a>
+          <br />
+          <a mailto=''>dmritard96@gmail.com</a>
+        </address>
+      </div>
+    </div>
+    <div class='span4'>
+      <div class='team-member'>
+        <img src='img/BeckyPretty.jpg' />
+        <address>
+          <a class='name' href='http://www.linkedin.com/pub/rebecca-nevin/28/932/2b8'>Rebecca Nevin</a>
+          <br />
+          <a mailto=''>rlnevin@gmail.com</a>
+        </address>
+      </div>
+    </div>
+  </div>
+</section>
 <div class='row'>
   <div class='span16'>
     <section id='background'>
@@ -74,6 +88,7 @@ title: Singer Identification
         <li>Repeated for each of the 5 common Italian language vowels.</li>
         <li>44.1.sampling rate and 16 bits/samples</li>
       </ul>
+      <a class='btn primary' href='https://github.com/downloads/crxpandion/Singer_ID/samples.zip'>Download our data set (66MB)</a>
     </section>
     <section id='signalprocessing'>
       <h2>Signal Processing</h2>
@@ -87,7 +102,11 @@ title: Singer Identification
     <section id='learningmethod'>
       <h2>Learning Method</h2>
       <ul>
-        <li>The WEKA software package was used to perform learning tasks.</li>
+        <li>
+          The
+          <a href='http://www.cs.waikato.ac.nz/ml/weka/index.html'>WEKA software package</a>
+          was used to perform learning tasks.
+        </li>
         <li>LibSVM was used with quadratic classifiers.</li>
         <li>Ten-fold cross-validation.</li>
         <li>
@@ -195,6 +214,14 @@ title: Singer Identification
           </a>
         </li>
       </ul>
+      <audio controls='controls'>
+        <source src='https://github.com/crxpandion/Singer_ID/raw/master/samples/soprano1/mid/a/a2.wav' type='audio/wav'></source>
+        Your browser does not support the audio tag.
+      </audio>
+      <audio controls='controls'>
+        <source src='https://github.com/crxpandion/Singer_ID/raw/master/samples/Mezzo1/mid/a/a1.wav' type='audio/wav'></source>
+        Your browser does not support the audio tag.
+      </audio>
       <h3>Voice maturity</h3>
       <p>
         The age and maturity of our sample set must also be considered in evaluating

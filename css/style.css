@@ -59,6 +59,10 @@ address .name {
   font-size: 120%;
 }
 
+.tagline {
+  font-style: italic;
+}
+
 section {
   padding-top: 60px;
 }

@@ -3,39 +3,49 @@ layout: default
 title: Singer Identification
 \---
 .page-header
-  %h1 Teaching Computers to Identify Singers
-  %h1
-    %small A Study in Signal Processing and Machine Learning
+  .row
+    .span12
+      %h1 Teaching Computers to Identify Singers
+      %h1
+        %small A Study in Signal Processing and Machine Learning
+    .span4
+      %p
+        Northwestern University
+        %br/
+        EECS 349
+        %br/
+        Bryan Pardo
+
 %section#team
-%h2 The Team
-.row
-  .span4
-    .team-member
-      %address
-        %img{:src=>"img/KaiSmall.jpg"}
-        %a.name{:href=>"http://www.linkedin.com/pub/kai-hayashi/23/734/160"} Kai Hayashi
-        %a{:mailto => ""} k.hermitian@gmail.com
-  .span4
-    .team-member
-      %img{:src=>"img/cary_square.jpg"}
-      %address
-        %a.name{:href=>"http://www.caryme.com"} Cary Lee
-        %br/
-        %a{:mailto => ""} carylee@gmail.com
-  .span4
-    .team-member
-      %img{:src=>"img/DanHornSmall.jpg"}
-      %address
-        %a.name{:href=>"http://linuxhaxor.blogspot.com/"} Daniel Myers
-        %br/
-        %a{:mailto => ""} dmritard96@gmail.com
-  .span4
-    .team-member
-      %img{:src=>"img/BeckyPretty.jpg"}
-      %address
-        %a.name{:href=>"http://www.linkedin.com/pub/rebecca-nevin/28/932/2b8"} Rebecca Nevin
-        %br/
-        %a{:mailto => ""} rlnevin@gmail.com
+  %h2 The Team
+  .row
+    .span4
+      .team-member
+        %address
+          %img{:src=>"img/KaiSmall.jpg"}
+          %a.name{:href=>"http://www.linkedin.com/pub/kai-hayashi/23/734/160"} Kai Hayashi
+          %a{:mailto => ""} k.hermitian@gmail.com
+    .span4
+      .team-member
+        %img{:src=>"img/cary_square.jpg"}
+        %address
+          %a.name{:href=>"http://www.caryme.com"} Cary Lee
+          %br/
+          %a{:mailto => ""} carylee@gmail.com
+    .span4
+      .team-member
+        %img{:src=>"img/DanHornSmall.jpg"}
+        %address
+          %a.name{:href=>"http://linuxhaxor.blogspot.com/"} Daniel Myers
+          %br/
+          %a{:mailto => ""} dmritard96@gmail.com
+    .span4
+      .team-member
+        %img{:src=>"img/BeckyPretty.jpg"}
+        %address
+          %a.name{:href=>"http://www.linkedin.com/pub/rebecca-nevin/28/932/2b8"} Rebecca Nevin
+          %br/
+          %a{:mailto => ""} rlnevin@gmail.com
 .row
   .span16
     %section#background
@@ -56,6 +66,8 @@ title: Singer Identification
         %li Repeated in the low, middle and high regions of the singer’s range.
         %li Repeated for each of the 5 common Italian language vowels.
         %li 44.1.sampling rate and 16 bits/samples
+      %a{:href=>"https://github.com/downloads/crxpandion/Singer_ID/samples.zip", :class=>"btn primary"} Download our data set (66MB)
+
     %section#signalprocessing
       %h2 Signal Processing
       %p Before machine learning can occur, the necessary features must be extracted from the raw audio files.
@@ -67,7 +79,10 @@ title: Singer Identification
     %section#learningmethod
       %h2 Learning Method
       %ul
-        %li The WEKA software package was used to perform learning tasks.
+        %li
+          The
+          %a{:href=>"http://www.cs.waikato.ac.nz/ml/weka/index.html"} WEKA software package
+          was used to perform learning tasks.
         %li LibSVM was used with quadratic classifiers.
         %li Ten-fold cross-validation.
         %li
@@ -148,6 +163,12 @@ title: Singer Identification
         %li
           %a{:href=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/CTF/comparisionMezzo1Soprano1CTF.png", 'data-placement'=>"right", :rel=>"twipsy", :title=>"Classifying Individual Singers"}
             %img{:src=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/CTF/comparisionMezzo1Soprano1CTF.png"}
+      %audio{:controls=>"controls"}
+        %source{:src=>"https://github.com/crxpandion/Singer_ID/raw/master/samples/soprano1/mid/a/a2.wav", :type=>"audio/wav"}
+        Your browser does not support the audio tag.
+      %audio{:controls=>"controls"}
+        %source{:src=>"https://github.com/crxpandion/Singer_ID/raw/master/samples/Mezzo1/mid/a/a1.wav", :type=>"audio/wav"}
+        Your browser does not support the audio tag.
       %h3 Voice maturity
       %p
         The age and maturity of our sample set must also be considered in evaluating
