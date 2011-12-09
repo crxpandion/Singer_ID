@@ -185,8 +185,8 @@ title: Singer Identification
       </p>
       <a class='btn primary' href='https://github.com/downloads/crxpandion/Singer_ID/samples.zip'>Download our data set (66MB)</a>
     </section>
-    <section id='signalprocessing'>
-      <h2>Signal Processing</h2>
+    <section id='workflow'>
+      <h2>Workflow</h2>
       <p>Before machine learning can occur, the necessary features must be extracted from the raw audio files.</p>
       <ol>
         <li>The Matlab Signal Processing toolbox was used to calculate a spectrogram for each signal.</li>
@@ -233,12 +233,12 @@ title: Singer Identification
       <h3>Composite Transfer Functions vs. Mel Frequency Cepstral Coefficients</h3>
       <ul class='media-grid confusion'>
         <li>
-          <a data-placement='below' href='https://github.com/crxpandion/Singer_ID/raw/master/figures/Confusion/Formant_all_Confusion.png' rel='twipsy' title='Confusion matrix for individual singers using CTF'>
+          <a data-content='Vertical axis shows actual,&#x000A; horizontal axis shows classification' data-placement='below' href='https://github.com/crxpandion/Singer_ID/raw/master/figures/Confusion/Formant_all_Confusion.png' rel='popover' title='Confusion matrix for individual singers using CTF'>
             <img src='https://github.com/crxpandion/Singer_ID/raw/master/figures/Confusion/Formant_all_Confusion.png' />
           </a>
         </li>
         <li>
-          <a data-placement='below' href='https://github.com/crxpandion/Singer_ID/raw/master/figures/Confusion/Cepstral_all_Confusion.png' rel='twipsy' title='Confusion matrix for individual singers using MFCC'>
+          <a data-content='Vertical axis shows actual,&#x000A; horizontal axis shows classification' data-placement='below' href='https://github.com/crxpandion/Singer_ID/raw/master/figures/Confusion/Cepstral_all_Confusion.png' rel='popover' title='Confusion matrix for individual singers using MFCC'>
             <img src='https://github.com/crxpandion/Singer_ID/raw/master/figures/Confusion/Cepstral_all_Confusion.png' />
           </a>
         </li>
@@ -281,22 +281,22 @@ title: Singer Identification
         <div class='span11'>
           <ul class='media-grid'>
             <li>
-              <a data-placement='left' href='https://github.com/crxpandion/Singer_ID/raw/master/figures/boxplots/SingerClassBox.png' rel='twipsy' title='Classifying Individual Singers'>
+              <a data-content='Random would be 9%' data-placement='left' href='https://github.com/crxpandion/Singer_ID/raw/master/figures/boxplots/SingerClassBox.png' rel='popover' title='Classifying Individual Singers'>
                 <img src='https://github.com/crxpandion/Singer_ID/raw/master/figures/boxplots/SingerClassBox.png' />
               </a>
             </li>
             <li>
-              <a data-placement='left' href='https://github.com/crxpandion/Singer_ID/raw/master/figures/boxplots/SingerTypeClassBox.png' rel='twipsy' title='Classifying Voice Type'>
+              <a data-content='Random would be 20%' data-placement='left' href='https://github.com/crxpandion/Singer_ID/raw/master/figures/boxplots/SingerTypeClassBox.png' rel='popover' title='Classifying Voice Type'>
                 <img src='https://github.com/crxpandion/Singer_ID/raw/master/figures/boxplots/SingerTypeClassBox.png' />
               </a>
             </li>
             <li>
-              <a data-placement='left' href='https://github.com/crxpandion/Singer_ID/raw/master/figures/boxplots/SexClassBox.png' rel='twipsy' title='Classifying Sex'>
+              <a data-content='Random would be 50%' data-placement='left' href='https://github.com/crxpandion/Singer_ID/raw/master/figures/boxplots/SexClassBox.png' rel='popover' title='Classifying Sex'>
                 <img src='https://github.com/crxpandion/Singer_ID/raw/master/figures/boxplots/SexClassBox.png' />
               </a>
             </li>
             <li>
-              <a data-placement='left' href='https://github.com/crxpandion/Singer_ID/raw/master/figures/Confusion/Cepstral_Type_Confusion.png' rel='twipsy' title='Classifying Voice Type'>
+              <a data-content='Vertical axis shows actual, horizontal axis shows classification' data-placement='left' href='https://github.com/crxpandion/Singer_ID/raw/master/figures/Confusion/Cepstral_Type_Confusion.png' rel='popover' title='Classifying Individual Singers'>
                 <img src='https://github.com/crxpandion/Singer_ID/raw/master/figures/Confusion/Cepstral_Type_Confusion.png' />
               </a>
             </li>
@@ -320,19 +320,25 @@ title: Singer Identification
       </p>
       <div class='row'>
         <div class='span7'>
-          <h4>Soprano1</h4>
+          <h4>
+            Soprano1
+            <span class='label important'>in red</span>
+          </h4>
           <audio controls='controls'>
             <source src='https://github.com/crxpandion/Singer_ID/raw/master/samples/Soprano1/mid/a/a2.wav' type='audio/wav'></source>
             Your browser does not support the audio tag.
           </audio>
-          <h4>Mezzo1</h4>
+          <h4>
+            Mezzo1
+            <span class='label notice'>in blue</span>
+          </h4>
           <audio controls='controls'>
             <source src='https://github.com/crxpandion/Singer_ID/raw/master/samples/Mezzo1/mid/a/a1.wav' type='audio/wav'></source>
             Your browser does not support the audio tag.
           </audio>
         </div>
         <div class='span9 media-grid'>
-          <a data-placement='left' href='https://github.com/crxpandion/Singer_ID/raw/master/figures/CTF/comparisionMezzo1Soprano1CTF.png' rel='twipsy' title='Classifying Individual Singers'>
+          <a href='https://github.com/crxpandion/Singer_ID/raw/master/figures/CTF/comparisionMezzo1Soprano1CTF.png'>
             <img src='https://github.com/crxpandion/Singer_ID/raw/master/figures/CTF/comparisionMezzo1Soprano1CTF.png' />
           </a>
         </div>

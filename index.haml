@@ -146,8 +146,8 @@ title: Singer Identification
         These scales were then manually split into single-pitch, 1-second samples, totalling 825 samples (75 per singer).
       %a{:href=>"https://github.com/downloads/crxpandion/Singer_ID/samples.zip", :class=>"btn primary"} Download our data set (66MB)
 
-    %section#signalprocessing
-      %h2 Signal Processing
+    %section#workflow
+      %h2 Workflow
       %p Before machine learning can occur, the necessary features must be extracted from the raw audio files.
       %ol
         %li The Matlab Signal Processing toolbox was used to calculate a spectrogram for each signal.
@@ -185,10 +185,10 @@ title: Singer Identification
       %h3 Composite Transfer Functions vs. Mel Frequency Cepstral Coefficients
       %ul.media-grid.confusion
         %li
-          %a{:href=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/Confusion/Formant_all_Confusion.png", 'data-placement'=>"below", :rel=>"twipsy", :title=>"Confusion matrix for individual singers using CTF"}
+          %a{:href=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/Confusion/Formant_all_Confusion.png", :data=>{:placement=>"below", :content=>"Vertical axis shows actual,\n horizontal axis shows classification"}, :rel=>"popover", :title=>"Confusion matrix for individual singers using CTF"}
             %img{:src=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/Confusion/Formant_all_Confusion.png"}
         %li
-          %a{:href=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/Confusion/Cepstral_all_Confusion.png", 'data-placement'=>"below", :rel=>"twipsy", :title=>"Confusion matrix for individual singers using MFCC"}
+          %a{:href=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/Confusion/Cepstral_all_Confusion.png", :data=>{:placement=>"below", :content=>"Vertical axis shows actual,\n horizontal axis shows classification"}, :rel=>"popover", :title=>"Confusion matrix for individual singers using MFCC"}
             %img{:src=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/Confusion/Cepstral_all_Confusion.png"}
       %p
         The plots above show confusion matrices for the CTF approximation
@@ -223,16 +223,16 @@ title: Singer Identification
         .span11
           %ul.media-grid
             %li
-              %a{:href=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/boxplots/SingerClassBox.png", 'data-placement'=>"left", :rel=>"twipsy", :title=>"Classifying Individual Singers"}
+              %a{:href=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/boxplots/SingerClassBox.png", :data=>{:placement=>"left", :content=>"Random would be 9%"}, :rel=>"popover", :title=>"Classifying Individual Singers"}
                 %img{:src=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/boxplots/SingerClassBox.png"}
             %li
-              %a{:href=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/boxplots/SingerTypeClassBox.png", 'data-placement'=>"left", :rel=>"twipsy", :title=>"Classifying Voice Type"}
+              %a{:href=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/boxplots/SingerTypeClassBox.png", :data=>{:placement=>"left", :content=>"Random would be 20%"}, :rel=>"popover", :title=>"Classifying Voice Type"}
                 %img{:src=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/boxplots/SingerTypeClassBox.png"}
             %li
-              %a{:href=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/boxplots/SexClassBox.png", 'data-placement'=>"left", :rel=>"twipsy", :title=>"Classifying Sex"}
+              %a{:href=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/boxplots/SexClassBox.png", :data=>{:placement=>"left", :content=>"Random would be 50%"}, :rel=>"popover", :title=>"Classifying Sex"}
                 %img{:src=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/boxplots/SexClassBox.png"}
             %li
-              %a{:href=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/Confusion/Cepstral_Type_Confusion.png", 'data-placement'=>"left", :rel=>"twipsy", :title=>"Classifying Voice Type"}
+              %a{:href=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/Confusion/Cepstral_Type_Confusion.png", :data=>{:placement=>"left", :content=>"Vertical axis shows actual, horizontal axis shows classification"}, :rel=>"popover", :title=>"Classifying Individual Singers"}
                 %img{:src=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/Confusion/Cepstral_Type_Confusion.png"}
 
 
@@ -252,16 +252,20 @@ title: Singer Identification
 
       .row
         .span7
-          %h4 Soprano1
+          %h4
+            Soprano1
+            %span.label.important in red
           %audio{:controls=>"controls"}
             %source{:src=>"https://github.com/crxpandion/Singer_ID/raw/master/samples/Soprano1/mid/a/a2.wav", :type=>"audio/wav"}
             Your browser does not support the audio tag.
-          %h4 Mezzo1
+          %h4
+            Mezzo1
+            %span.label.notice in blue
           %audio{:controls=>"controls"}
             %source{:src=>"https://github.com/crxpandion/Singer_ID/raw/master/samples/Mezzo1/mid/a/a1.wav", :type=>"audio/wav"}
             Your browser does not support the audio tag.
         .span9.media-grid
-          %a{:href=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/CTF/comparisionMezzo1Soprano1CTF.png", 'data-placement'=>"left", :rel=>"twipsy", :title=>"Classifying Individual Singers"}
+          %a{:href=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/CTF/comparisionMezzo1Soprano1CTF.png"}
             %img{:src=>"https://github.com/crxpandion/Singer_ID/raw/master/figures/CTF/comparisionMezzo1Soprano1CTF.png"}
       %h3 Voice maturity
       %p

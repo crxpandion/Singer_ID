@@ -23,7 +23,7 @@ h2 {
 
 
 /* The white background content wrapper */
-.content {
+.main-content {
   background-color: #fff;
   padding: 20px;
   margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
@@ -43,7 +43,7 @@ h2 {
 }
 
 /* Give a quick and non-cross-browser friendly divider */
-.content .span4 {
+.main-content .span4 {
   margin-left: 0;
   padding-left: 19px;
   border-left: 1px solid #eee;
@@ -79,7 +79,7 @@ section {
   width: 450px;
 }
 
-#signalprocessing img {
+#workflow img {
   width: 930px;
 }
 
@@ -95,7 +95,7 @@ section {
   #team {
     display:none;
   }
-  .content {
+  .main-content {
     width:320px;
   }
 }
