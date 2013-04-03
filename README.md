@@ -1,6 +1,8 @@
-Singer_ID 
+Singer_ID
+=========
 
-Project for machine learning class at Northwestern University. For more info check out the proejct website (http://crxpandion.github.com/Singer_ID/)
+Project for machine learning class at Northwestern University.
+For more info check out the project website (http://crxpandion.github.com/Singer_ID/)
 
 This is project contains several scripts and programs to identify interesting 
 characterisitcs in signers' voices. 
